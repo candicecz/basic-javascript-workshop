@@ -10,8 +10,14 @@ function firstLetter(inputString) {
 console.log(answer); //executing it*/
 
 function lastLetter(inputString) {
-
+    if(inputString === undefined){
+            return ;
+        } 
+        else {
+            return inputString[inputString.length-1];
+        }
 }
+
 
 function letterAtPosition(inputString, position) {
 

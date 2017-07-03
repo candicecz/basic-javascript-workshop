@@ -20,7 +20,12 @@ function lastLetter(inputString) {
 
 
 function letterAtPosition(inputString, position) {
-
+    if(inputString === undefined || position === undefined){
+        return ;
+    }
+    else{
+        return inputString[position];
+    }
 }
 
 function addTwoNumbers(num1, num2) {

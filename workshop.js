@@ -48,7 +48,7 @@ function multiplyTwoNumbers(num1, num2) {
 }
 
 function calculator(operation, num1, num2) {
-    if(operation == "add"){
+    if(operation === "add"){
         return num1+num2;
     } else if (operation === "sub"){
         return num1-num2;
@@ -62,23 +62,56 @@ function calculator(operation, num1, num2) {
 }
 
 function repeatString(inputString, numRepetitions) {
-
+    var repeatedString = "";
+    if(numRepetitions>0){
+        repeatedString = inputString.repeat(numRepetitions)
+    } else if (numRepetitions<=0){
+        repeatedString="";
+    } else {
+        return;
+    }
+    return repeatedString;
 }
 
 function reverseString(inputString) {
-
+    var array = [];
+    array = inputString.split('').reverse().join('');
+    return array;
 }
 
 function longestWord(inputString) {
-
+    var str = inputString.split(" ");
+    var wordLength = 0;
+    var longestWord = "";
+    
+    for(var i = 0; i < str.length; i++){
+        if(str[i].length > wordLength){
+            wordLength = str[i].length;
+            longestWord = str[i];
+        }
+    }
+    return longestWord;
 }
+
 
 function capitalize(inputString) {
-
+  
 }
 
-function sumOfNumbers(arrayOfNumbers) {
 
+function sumOfNumbers(arrayOfNumbers) {
+    for(var i=0; i<arrayOfNumbers.length;i++){
+        if(isNaN(arrayOfNumbers[i])){
+            return;
+        }
+        
+        else {
+            var addingNumbers = arrayOfNumbers.reduce(function(a,b){return a+b},0);
+            return addingNumbers;
+    
+        }
+    }
+   
 }
 
 function uniqueElements(array1, array2) {
@@ -86,7 +119,16 @@ function uniqueElements(array1, array2) {
 }
 
 function isPalindrome(inputString) {
-
+    var alphaNumeric = /[a-z0-9]/gi;
+    inputString = inputString.toLowerCase().match(alphaNumeric,'');
+    for (var i = 0, len = inputString.length - 1; i < len/2; i++){
+        if (inputString[i] !== inputString[len-i]){
+        return false;
+    } else if (inputString ===  null){
+        return true;
+    }
+  }
+ return true;
 }
 
 function wrapCharacter(inputString) {

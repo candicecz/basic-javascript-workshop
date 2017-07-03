@@ -1,6 +1,13 @@
 function firstLetter(inputString) {
-
+    if(inputString === undefined){
+        return undefined;
+    } 
+    else {
+        return inputString[0];
+    }
 }
+/*var answer = firstLetter("decodemtl"); //calling the function
+console.log(answer); //executing it*/
 
 function lastLetter(inputString) {
 

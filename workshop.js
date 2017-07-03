@@ -29,11 +29,22 @@ function letterAtPosition(inputString, position) {
 }
 
 function addTwoNumbers(num1, num2) {
+    if(isNaN(num1 || num2)){
+        return;
+    }
+    else{
+        return num1 + num2;
+    }
 
 }
 
 function multiplyTwoNumbers(num1, num2) {
-
+    if(isNaN(num1 || num2)){
+        return;
+    }
+    else{
+        return num1*num2;
+    }
 }
 
 function calculator(operation, num1, num2) {

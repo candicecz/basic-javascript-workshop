@@ -95,23 +95,24 @@ function longestWord(inputString) {
 
 
 function capitalize(inputString) {
-  
+  var newStr = inputString.toLowerCase().split(' ');
+  for(var i =0; i<newStr.length; i++){
+    newStr[i] = newStr[i].charAt(0).toUpperCase()+newStr[i].slice(1);
+  }
+  return newStr.join(' ')
 }
 
-
 function sumOfNumbers(arrayOfNumbers) {
-    for(var i=0; i<arrayOfNumbers.length;i++){
-        if(isNaN(arrayOfNumbers[i])){
+    if(arrayOfNumbers.length === 0) {
+        return 0;
+    }
+    for(var i=0; i<arrayOfNumbers.length; i++){
+        if(typeof arrayOfNumbers[i] !== "number"){
             return;
         }
-        
-        else {
-            var addingNumbers = arrayOfNumbers.reduce(function(a,b){return a+b},0);
-            return addingNumbers;
-    
-        }
     }
-   
+    var sum = arrayOfNumbers.reduce(function(a,b){return a+b;});
+    return sum;
 }
 
 function uniqueElements(array1, array2) {

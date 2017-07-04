@@ -116,12 +116,14 @@ function sumOfNumbers(arrayOfNumbers) {
 }
 
 function uniqueElements(array1, array2) {
-
 }
 
 function isPalindrome(inputString) {
     var alphaNumeric = /[a-z0-9]/gi;
     inputString = inputString.toLowerCase().match(alphaNumeric,'');
+    if(inputString === null){
+        return true;
+    }
     for (var i = 0, len = inputString.length - 1; i < len/2; i++){
         if (inputString[i] !== inputString[len-i]){
         return false;
@@ -133,15 +135,31 @@ function isPalindrome(inputString) {
 }
 
 function wrapCharacter(inputString) {
-
-}
+    var newStr = inputString.slice(0,41);
+    return newStr;
+} //unfinished, not wrapping larger than 40 strings
 
 function wrapWord(inputString) {
 
 }
 
 function bubbleSort(arrayOfNumbers) {
-
+    var numbersSwitched = true;
+    if(numbersSwitched === true){
+        for (var i = 0; i < arrayOfNumbers.length-1; i++){
+            if(arrayOfNumbers[i] > arrayOfNumbers[i+1]){
+                var positionSwitch = arrayOfNumbers[i];
+                arrayOfNumbers[i] = arrayOfNumbers[i+1];
+                arrayOfNumbers[i+1] = positionSwitch;
+                numbersSwitched = true;
+            } 
+            
+        }
+    }
+    numbersSwitched = false;
+    
+    return arrayOfNumbers;
+    
 }
 
 /***** DO NOT EDIT AFTER THIS LINE *****/
